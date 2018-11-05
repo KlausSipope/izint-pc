@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" style="flex:1;">
+        <a href="{{ path('show_user_profile', {id: app.user.id}) }}">{{ 'view.my.profile'|trans }}</a>
+        <br/>
+        <a id="logout" href="{{ path('fos_user_security_logout') }}">{{ 'logout'|trans }}</a>
+    </div>
+{% endblock %}
