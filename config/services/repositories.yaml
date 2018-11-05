@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        public: true
+
+    App\Repository\UserRepository:
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - App\Entity\User

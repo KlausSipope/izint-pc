@@ -1,0 +1,23 @@
+forgot.password: Forgot Password
+security.login.submit: Login
+security.login.password: Password
+register.message: Not registered?
+first.name.must.be.shorter: First name must be shorter than 50 characters
+last.name.must.be.shorter: Last name must be shorter than 50 characters
+create.account: Create Account
+try.again: Try Again
+update: Update
+first.name: First Name
+last.name: Last Name
+description: Description
+password.updated.successfully: Password has been successfully updated!
+return.to.profile: Return to profile
+password: Password
+repeat.password: Repeat Password
+return.to.homepage: Return to Homepage
+logout: Logout
+view.my.profile: View My Profile
+edit.profile: Edit Profile
+update.password: Update Password
+back: Back
+resetting.check.email: Please check your email
