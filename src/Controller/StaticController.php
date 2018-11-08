@@ -18,7 +18,7 @@ class StaticController extends Controller
      */
     public function homepageAction(): Response
     {
-        return $this->render('pages/homepage.html.twig');
+        return $this->redirectToRoute('fos_user_security_login');
     }
 
     /**

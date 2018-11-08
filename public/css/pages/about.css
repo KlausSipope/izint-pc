@@ -1,0 +1,43 @@
+#owner-info {
+    float: left;
+    width: 25%;
+}
+
+#owner {
+    margin-top: 20%;
+}
+
+#owner-info img {
+    width: 70%;
+}
+
+.col-lg-12 {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.mt-15 {
+    margin-top: 40px;
+    font-size: 16px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.owner-position {
+    font-size: 14px;
+    color: rgba(0,0,0,0.38);
+}
+
+#owner-quote {
+    margin-left: 25%;
+}
+
+.generic-blockquote {
+    padding: 30px 50px 30px 30px;
+    background: #f9f9ff;
+    border-left: 2px solid #fab700;
+    width: 95%;
+    text-align: justify;
+    font-size: 20px;
+    margin-left: 50px;
+}

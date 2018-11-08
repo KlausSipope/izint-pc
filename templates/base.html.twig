@@ -2,13 +2,19 @@
 <html style="margin: 0; padding: 0; height: 100%;">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}IZINT{% endblock %}</title>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/jumbotron.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap-theme.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
         {% block stylesheets %}{% endblock %}
-
     </head>
-    <body>
+    <body style="display: flex;min-height: 100vh;flex-direction: column;">
+        {% block header %}{% include 'partials/header.html.twig' %}{% endblock %}
         {% block body %}{% endblock %}
+        {% block footer %}{% include 'partials/footer.html.twig' %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/pages/contact.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="flex:1; text-align: center;">
+        <div id="map_canvas" style="background-image:url('{{ asset('images/loading.gif') }}');background-repeat: no-repeat;background-position: center">
+            <div id="map"></div>
+        </div>
+        <br/><br/>
+        <div id="contact-details">
+            <p><img src="{{ asset('images/home-logo.png') }}" width="30" height="30"/>Teodor Mihali 58-60, Cluj-Napoca, Romania</p>
+            <p><img src="{{ asset('images/phone-logo.png') }}" width="30" height="30"/>+40 777 777 777</p>
+            <p><img src="{{ asset('images/email-logo.png') }}" width="30" height="30"/>dummy@dummy.com</p>
+        </div>
+        <br/><br/>
+        <div id="contact-form">
+            {% if successfullySent is null %}
+                <div class="form-container">
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
+                    <div id="contact-form-left">
+                        {{ form_row(form.lastName) }}
+                        {{ form_row(form.firstName) }}
+                        {{ form_row(form.email) }}
+                    </div>
+                    <div id="contact-form-right">
+                        {{ form_row(form.message) }}
+                    </div>
+                    <div class="buttons-container">
+                        <button>{{ 'contact.send'|trans }}</button>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            {% elseif successfullySent == true %}
+                {{ 'contact.email.sent.successfully'|trans }}<br/>
+                <a href="{{ path('homepage') }}">{{ 'return.to.homepage'|trans }}</a>
+            {% else %}
+                {{ 'contact.email.error.sending'|trans }}
+                <a href="{{ path('homepage') }}">{{ 'return.to.homepage'|trans }}</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var uluru = {lat: 46.7732, lng: 23.6209};
+        var markers = [];
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {zoom: 16, center: uluru});
+
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng('46.7732', '23.6209'),
+                map: map
+            });
+
+            markers.push(marker);
+
+            var markerCluster = new MarkerClusterer(map, markers,
+                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        }
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHZurKZJABIEc84esBG7-FEc_fBWK9ick&callback=initMap"
+            async defer></script>
+{% endblock %}
