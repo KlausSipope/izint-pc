@@ -40,7 +40,6 @@ class UserController extends Controller
 
             $token = new UsernamePasswordToken($user, $user->getPassword(), "main", $user->getRoles());
             $this->get("security.token_storage")->setToken($token);
-
             $event = new InteractiveLoginEvent($request, $token);
             $this->get("event_dispatcher")->dispatch("security.interactive_login", $event);
 
@@ -112,6 +111,6 @@ class UserController extends Controller
      */
     public function userHomepageAction(): Response
     {
-        return $this->render('pages/user/home.html.twig');
+        return $this->render('pages/user/homepage.html.twig');
     }
 }
