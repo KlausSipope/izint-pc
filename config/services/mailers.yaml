@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        autowire: true
+        public: true
+
+    App\Service\Mailer\ContactMailer:
+        arguments:
+            - '@mailer'
+            - '%env(CONTACT_EMAILS_RECEIVER)%'
+            - '%env(CONTACT_EMAILS_BODY)%'
+            - '%env(CONTACT_EMAILS_TITLE)%'

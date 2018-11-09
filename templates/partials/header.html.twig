@@ -9,42 +9,9 @@
 
         <nav id="navigation-bar">
             <ul class="nav nav-pills pull-right">
-                {% if is_granted('ROLE_USER') %}
-                    <li role="presentation"><a href="#">{{ 'homepage'|trans }}</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" onclick="void(0)">{{ 'events'|trans }}</a>
-                        <ul class="dropdown-menu" style="text-align: center;">
-                            <li role="presentation"><a href="#">{{ 'create.event'|trans }}</a></li>
-                            <li role="presentation"><a href="#">{{ 'my.events'|trans }}</a></li>
-                            {% if is_granted('ROLE_OFFICER') %}<li role="presentation"><a href="{{ path('officer_events') }}">{{ 'event.handling'|trans }}</a></li>{% endif %}
-                            <li role="presentation"><a href="#">{{ 'all.events'|trans }}</a></li>
-                        </ul>
-                    </li>
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">{{ 'hall.of.fame'|trans }} <span class="caret"></span></a>
-                        <ul class="dropdown-menu" style="text-align: center;">
-                            <li role="presentation"><a href="#">{{ 'users'|trans }}</a></li>
-                            <li role="presentation"><a href="#">{{ 'officers'|trans }}</a>
-                            <li role="presentation"><a href="#">{{ 'awards'|trans }}</a></li>
-                        </ul>
-                    </li>
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">{{ 'profile'|trans }} <span class="caret"></span></a>
-                        <ul class="dropdown-menu" style="text-align: center;">
-                            <li role="presentation"><a href="#">{{ 'view.profile'|trans }}</a></li>
-                            <li role="presentation"><a href="#">{{ 'my.comments'|trans }}</a></li>
-                            <li role="presentation"><a id="inbox-menu-item" href="#">{{ 'inbox'|trans }}</a></li>
-                            <li role="presentation"><a href="#">{{ 'sent'|trans }}</a></li>
-                        </ul>
-                    </li>
-                    <li role="presentation"><a href="{{ path('contact') }}">{{ 'header.nav.contact'|trans }}</a></li>
-                    <li role="presentation"><a href="{{ path('about') }}">{{ 'header.nav.about'|trans }}</a></li>
-                    <li role="presentation"><a id="logout" href="{{ path('fos_user_security_logout') }}">{{ 'logout'|trans }}</a></li>
-                {% else %}
-                    <li role="presentation"><a href="{{ path('fos_user_security_login') }}">{{ 'header.nav.login'|trans }}</a></li>
-                    <li role="presentation"><a href="{{ path('contact') }}">{{ 'header.nav.contact'|trans }}</a></li>
-                    <li role="presentation"><a href="{{ path('about') }}">{{ 'header.nav.about'|trans }}</a></li>
-                {% endif %}
+                <li role="presentation"><a href="{{ path('fos_user_security_login') }}">{{ 'header.nav.login'|trans }}</a></li>
+                <li role="presentation"><a href="{{ path('contact') }}">{{ 'header.nav.contact'|trans }}</a></li>
+                <li role="presentation"><a href="{{ path('about') }}">{{ 'header.nav.about'|trans }}</a></li>
             </ul>
         </nav>
     </div>
