@@ -1,0 +1,18 @@
+<div id="header" class="container">
+    <div class="header clearfix">
+        <div class="logo-container">
+            <a href="#">
+                <img id="logo" height="55" width="55" src="{{ asset('images/logo.png') }}"/>
+                <h3 class="text-muted" style="display: inline; font-size: 25px;">IZINT</h3>
+            </a>
+        </div>
+
+        <nav id="navigation-bar">
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation"><a href="{{ path('fos_user_security_login') }}">{{ 'header.nav.login'|trans }}</a></li>
+                <li role="presentation"><a href="{{ path('contact') }}">{{ 'header.nav.contact'|trans }}</a></li>
+                <li role="presentation"><a href="{{ path('about') }}">{{ 'header.nav.about'|trans }}</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

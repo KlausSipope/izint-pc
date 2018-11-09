@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/pages/register.css') }}">
+{% endblock %}
+
 {% block body %}
     <div class="container" style="flex:1;">
         {% if form is defined %}
@@ -20,8 +24,5 @@
             {{ error|trans }}<br /><br />
             <a href="{{ path('register_user') }}">{{ 'try.again'|trans }}</a>
         {% endif %}
-
-        <br />
-        <a href="{{ path('fos_user_security_login') }}">{{ 'back'|trans }}</a>
     </div>
 {% endblock %}

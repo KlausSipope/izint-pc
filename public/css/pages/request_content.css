@@ -1,0 +1,38 @@
+.form-container {
+    width: 50%;
+    padding-top: 10%;
+    margin: auto;
+}
+
+.btn {
+    background-color: #555555;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+}
+
+input[type=submit] {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    float: right;
+    width: 200px;
+}
+
+input[type=text] {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    box-shadow: none;
+    border-radius:0;
+}
+
+input[type=text]:focus {
+    box-shadow: none;
+}

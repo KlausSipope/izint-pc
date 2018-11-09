@@ -1,0 +1,86 @@
+.message-icon {margin-right: 10px;}
+footer {bottom: 0;height:60px;margin-top:50px;}
+#footer-elements-list {list-style-type: none; display: inline;}
+#footer-copyright {display:inline;}
+#footer-locale-switcher {display:inline; float:right;}
+.form-error-message {color: red; font-weight: normal;}
+.mb-0 {float: none; display:block; margin-top: 10px;}
+textarea {resize: none;}
+.logo-container a {text-decoration: none;}
+.logo-container { float: left;}
+footer {float:bottom;}
+#navigation-bar{float: right;}
+#header {width: 100%;}
+#myNav {box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+#message-icon-overlay {float:right;margin-top: 12px;display:none;}
+h1,h2,h3,h4,h5,h6,p,a,li,textarea,input,strong,blockquote {font-family: "Poppins", sans-serif;}
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 18%;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 26px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay-content .dropdown-menu li a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown {
+    padding: 0;
+}
+
+.caret {
+    pointer-events: none;
+}
+
+#menu-small-logo {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    display:none;
+}
