@@ -14,3 +14,6 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    fos_user.security.controller:
+        class: App\Controller\SecurityController
