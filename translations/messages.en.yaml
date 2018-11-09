@@ -3,6 +3,13 @@ header:
         login: LOGIN
         contact: CONTACT
         about: ABOUT
+        logout: LOGOUT
+        home: HOME
+        profile:
+            label: PROFILE
+            show: SHOW
+            edit: EDIT
+            update.password: UPDATE PASSWORD
 about:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -37,9 +44,7 @@ return.to.profile: Return to profile
 password: Password
 repeat.password: Repeat Password
 return.to.homepage: Return to Homepage
-logout: Logout
 view.my.profile: View My Profile
 edit.profile: Edit Profile
 update.password: Update Password
-back: Back
 resetting.check.email: Please check your email

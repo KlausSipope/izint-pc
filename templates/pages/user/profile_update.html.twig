@@ -19,7 +19,7 @@
             {{ form_end(form) }}
         </div>
         <br />
-        <a href="{{ path('show_user_profile', {id: app.user.id}) }}">{{ 'back'|trans }}</a>
+        <a href="{{ path('user_update_password') }}">{{ 'header.nav.profile.update.password'|trans }}</a>
     </div>
 
 {% endblock %}

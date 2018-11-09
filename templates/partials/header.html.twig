@@ -9,9 +9,23 @@
 
         <nav id="navigation-bar">
             <ul class="nav nav-pills pull-right">
-                <li role="presentation"><a href="{{ path('fos_user_security_login') }}">{{ 'header.nav.login'|trans }}</a></li>
-                <li role="presentation"><a href="{{ path('contact') }}">{{ 'header.nav.contact'|trans }}</a></li>
-                <li role="presentation"><a href="{{ path('about') }}">{{ 'header.nav.about'|trans }}</a></li>
+                {% if is_granted('ROLE_USER') %}
+                    <li role="presentation"><a href="{{ path('user_homepage', {id: app.user.id}) }}">{{ 'header.nav.home'|trans }}</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" onclick="void(0)">{{ 'header.nav.profile.label'|trans }}</a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="{{ path('show_user_profile', {id: app.user.id}) }}">{{ 'header.nav.profile.show'|trans }}</a></li>
+                            <li role="presentation"><a href="{{ path('user_update') }}">{{ 'header.nav.profile.edit'|trans }}</a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation"><a href="{{ path('contact') }}">{{ 'header.nav.contact'|trans }}</a></li>
+                    <li role="presentation"><a href="{{ path('about') }}">{{ 'header.nav.about'|trans }}</a></li>
+                    <li role="presentation"><a id="logout" href="{{ path('fos_user_security_logout') }}">{{ 'header.nav.logout'|trans }}</a></li>
+                {% else %}
+                    <li role="presentation"><a href="{{ path('fos_user_security_login') }}">{{ 'header.nav.login'|trans }}</a></li>
+                    <li role="presentation"><a href="{{ path('contact') }}">{{ 'header.nav.contact'|trans }}</a></li>
+                    <li role="presentation"><a href="{{ path('about') }}">{{ 'header.nav.about'|trans }}</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
