@@ -97,7 +97,7 @@ class UserController extends Controller
      *
      * @return Response
      *
-     * @Route("/user/profile/show/{id}", name="show_user_profile")
+     * @Route("/user/profile/show/{id}", name="fos_user_profile_show")
      */
     public function viewUserProfileAction(User $user): Response
     {

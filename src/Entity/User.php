@@ -194,11 +194,11 @@ class User extends BaseUser
     public function toArray(): array
     {
         return [
-            'id' => $this->getId(),
-            'firstName' => $this->getFirstName(),
-            'lastName' => $this->getLastName(),
+            'id'          => $this->getId(),
+            'firstName'   => $this->getFirstName(),
+            'lastName'    => $this->getLastName(),
             'description' => $this->getDescription(),
-            'subscribed' => $this->isSubscribed(),
+            'subscribed'  => $this->isSubscribed(),
         ];
     }
 }
