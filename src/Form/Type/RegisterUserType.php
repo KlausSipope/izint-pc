@@ -22,18 +22,18 @@ class RegisterUserType extends AbstractType
         $builder
             ->add('email', EmailType::class)
             ->add('plainPassword', RepeatedType::class, [
-                'type' => PasswordType::class,
+                'type'            => PasswordType::class,
                 'invalid_message' => 'passwords.fields.must.match',
-                'options' => array('attr' => array('class' => 'password-field')),
-                'first_options'  => array('label' => 'password'),
-                'second_options' => array('label' => 'repeat.password'),
+                'options'         => array('attr' => array('class' => 'password-field')),
+                'first_options'   => array('label' => 'password'),
+                'second_options'  => array('label' => 'repeat.password'),
             ])
             ->add('firstName', TextType::class, ['attr' => ['maxlength' => 50], 'label' => 'first.name'])
             ->add('lastName', TextType::class, ['attr' => ['maxlength' => 50], 'label' => 'last.name'])
             ->add('description', TextareaType::class, [
-                'attr' => ['maxlength' => 500, 'rows' => 7],
+                'attr'     => ['maxlength' => 500, 'rows' => 7],
                 'required' => false,
-                'label' => 'description'
+                'label'    => 'description'
             ]);
     }
 

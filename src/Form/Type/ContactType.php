@@ -25,22 +25,22 @@ class ContactType extends AbstractType
 
         $builder
             ->add('lastName', TextType::class, [
-                'attr' => ['maxlength' => 40],
-                'data' => $lastName ?? '',
+                'attr'  => ['maxlength' => 40],
+                'data'  => $lastName ?? '',
                 'label' => 'contact.last.name'
             ])
             ->add('firstName', TextType::class, [
-                'attr' => ['maxlength' => 40],
-                'data' => $firstName ?? '',
+                'attr'  => ['maxlength' => 40],
+                'data'  => $firstName ?? '',
                 'label' => 'contact.first.name'
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['maxlength' => 200],
-                'data' => $email ?? '',
+                'attr'  => ['maxlength' => 200],
+                'data'  => $email ?? '',
                 'label' => 'contact.email.label'
             ])
             ->add('message', TextareaType::class, [
-                'attr' => ['maxlength' => 500, 'rows' => 9],
+                'attr'  => ['maxlength' => 500, 'rows' => 9],
                 'label' => 'contact.message'
             ]);
     }

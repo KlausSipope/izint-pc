@@ -16,11 +16,11 @@ class UserPasswordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('plainPassword', RepeatedType::class, [
-            'type' => PasswordType::class,
+            'type'            => PasswordType::class,
             'invalid_message' => 'passwords.fields.must.match',
-            'options' => array('attr' => array('class' => 'password-field')),
-            'first_options'  => array('label' => 'password'),
-            'second_options' => array('label' => 'repeat.password'),
+            'options'         => array('attr' => array('class' => 'password-field')),
+            'first_options'   => array('label' => 'password'),
+            'second_options'  => array('label' => 'repeat.password'),
         ]);
     }
 
