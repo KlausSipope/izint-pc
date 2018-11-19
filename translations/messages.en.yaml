@@ -27,6 +27,9 @@ contact:
     first.name: First Name
     email.label: Email
     message: Message
+errors:
+    404: OOPS! - Could not Find it
+    500: A team of highly trained monkeys has been dispatched to fix the problem!
 forgot.password: Forgot Password
 security.login.submit: Login
 security.login.password: Password

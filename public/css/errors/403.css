@@ -1,0 +1,36 @@
+body{
+    background:#eaeaea;
+}
+.wrap{
+    margin:0 auto;
+    width:100%;
+}
+.logo{
+    text-align:center;
+    margin-top:150px;
+}
+.logo img{
+    width:850px;
+}
+.logo p{
+    color:#272727;
+    font-size:40px;
+    margin-top:1px;
+}
+.logo p span{
+    color:lightgreen;
+}
+.sub p{
+    margin-top: 20px;
+}
+.sub a{
+    color:#fff;
+    background:#272727;
+    text-decoration:none;
+    padding:10px 20px;
+    font-size:13px;
+    font-family: arial, serif;
+    font-weight:bold;
+    -webkit-border-radius:.5em;
+    -moz-border-radius:.5em;
+}
