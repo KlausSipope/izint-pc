@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oops 403{% endblock %}
+
+{% block stylesheets %}
+    <link href='//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/errors/403.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="flex: 1">
+        <div class="wrap">
+            <div class="logo">
+                <img src="{{ asset('images/errors/403.png') }}"/>
+                <div class="sub">
+                    <p><a href="{{ path('user_homepage') }}">{{ 'return.to.homepage'|trans }}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

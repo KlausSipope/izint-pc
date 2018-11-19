@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oops 500{% endblock %}
+
+{% block stylesheets %}
+    <link href='//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/errors/500.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="flex: 1">
+        <div class="wrap">
+            <div class="logo">
+                <img src="{{ asset('images/errors/500.png') }}"/>
+                <p>{{ 'errors.500'|trans }}</p>
+                <br /><br />
+                <div class="sub">
+                    <p><a href="{{ path('user_homepage') }}">{{ 'return.to.homepage'|trans }}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
