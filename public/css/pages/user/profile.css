@@ -1,0 +1,56 @@
+#ProfilePage {
+    margin: 20px auto;
+    width: 910px;
+}
+#LeftCol {
+    float: left;
+    width: 300px;
+    text-align: center;
+    margin-right: 20px;
+}
+#Photo {
+    width: 300px;
+    height: 300px;
+}
+#Info {
+    width: 550px;
+    float: right;
+}
+#Info strong {
+    display: inline-block;
+    width: 250px;
+}
+p {
+    word-wrap: break-word;
+}
+#achievements
+{
+    display:flex;
+    justify-content: center;
+}
+.achievement-image {
+    width: 80px;
+    height: 80px;
+}
+.achievement-image-container {
+    padding-left: 40px;
+}
+.achievement {
+    float: left;
+    margin-right: 0;
+    text-align: center;
+}
+#report-user {
+    margin-left: 30px;
+    color: red;
+}
+#name-of-the-user {
+    font-size: 22px;
+}
+.hall-of-fame-award {
+    width: 100px;
+    height: 100px;
+}
+.checked {
+    color: orange;
+}

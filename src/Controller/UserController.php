@@ -7,6 +7,7 @@ use App\Form\Type\RegisterUserType;
 use App\Form\Type\UserPasswordType;
 use App\Form\Type\UserProfileType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -112,5 +113,35 @@ class UserController extends Controller
     public function userHomepageAction(): Response
     {
         return $this->render('pages/user/homepage.html.twig');
+    }
+
+    /**
+     * @Route("/user/newsletter/subscribe", name="newsletter_subscribe")
+     *
+     * @return RedirectResponse
+     */
+    public function subscribeToNewsletterAction() : RedirectResponse
+    {
+        $this->getUser()->setSubscribed(true);
+        $this->getDoctrine()->getManager()->flush();
+
+        $this->addFlash('information', 'user.profile.newsletter.subscribed.flash');
+
+        return $this->redirectToRoute('fos_user_profile_show', ['id' => $this->getUser()->getId()]);
+    }
+
+    /**
+     * @Route("/user/newsletter/unsubscribe", name="newsletter_unsubscribe")
+     *
+     * @return RedirectResponse
+     */
+    public function unsubscribeFromNewsletterAction() : RedirectResponse
+    {
+        $this->getUser()->setSubscribed(false);
+        $this->getDoctrine()->getManager()->flush();
+
+        $this->addFlash('information', 'user.profile.newsletter.unsubscribed.flash');
+
+        return $this->redirectToRoute('fos_user_profile_show', ['id' => $this->getUser()->getId()]);
     }
 }
