@@ -17,7 +17,7 @@ class SecurityController extends BaseSecurityController
     public function loginAction(Request $request): Response
     {
         if (null !== $this->getUser()) {
-            return $this->redirectToRoute('user_homepage');
+            return $this->redirectToRoute('all_companies');
         }
 
         return parent::loginAction($request);

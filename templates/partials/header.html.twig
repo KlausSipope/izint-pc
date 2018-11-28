@@ -10,7 +10,7 @@
         <nav id="navigation-bar">
             <ul class="nav nav-pills pull-right">
                 {% if is_granted('ROLE_USER') %}
-                    <li role="presentation"><a href="{{ path('user_homepage', {id: app.user.id}) }}">{{ 'header.nav.home'|trans }}</a></li>
+                    <li role="presentation"><a href="{{ path('all_companies') }}">{{ 'header.nav.companies'|trans }}</a></li>
                     <li role="presentation"><a href="{{ path('fos_user_profile_show', {id: app.user.id}) }}">{{ 'header.nav.profile'|trans }}</a></li>
                     <li role="presentation"><a href="{{ path('contact') }}">{{ 'header.nav.contact'|trans }}</a></li>
                     <li role="presentation"><a href="{{ path('about') }}">{{ 'header.nav.about'|trans }}</a></li>

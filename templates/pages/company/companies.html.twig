@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/pages/company/companies.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/pages/company/company-filter.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="flex:1;">
+        {% if companies is not empty %}
+            <div class="count onmobile-ignore" style="margin-bottom: 30px;">
+                {{ 'companies.available.companies'|trans }}: {{ companies.getTotalItemCount }}
+            </div>
+
+            <div class="form-container">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                {{ form_row(form.filterBy) }}
+                {{ form_row(form.data) }}
+                <button id="search-button" class="btn-secondary btn">{{ 'companies.filter'|trans }}</button>
+                <a class="btn-secondary btn" href="{{ path('all_companies') }}">{{ 'companies.reset'|trans }}</a>
+                {{ form_end(form) }}
+            </div>
+
+            <table class="table">
+                <tr>
+                    <th>{{ knp_pagination_sortable(companies, 'Id', 'e.id') }}</th>
+                    <th{% if companies.isSorted('e.name') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(companies, 'name'|trans, 'e.name') }}</th>
+                    <th></th>
+                </tr>
+
+                {% for company in companies %}
+                    <tr {% if loop.index is odd %}class="color"{% endif %}>
+                        <td>{{ company.id }}</td>
+                        <td>{{ company.name|length > 20 ? company.name|slice(0, 20) ~ '...' : company.name  }}</td>
+                        <td><a href="">{{ 'companies.view.company.details'|trans }}</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <div class="navigation">
+                {{ knp_pagination_render(companies) }}
+            </div>
+        {% else %}
+            <div class="no-companies">
+                <p>{{ 'companies.no.companies'|trans }}</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery-confirm.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            var filterByField = $('#search_event_filterBy');
+            var eventDataField = $('#search_event_data');
+            var companiestatusField = $('#search_event_status');
+            var selectedIndex = filterByField.prop('selectedIndex');
+
+            if (selectedIndex === 0 || selectedIndex === 1) {
+                eventDataField.toggle(true);
+                companiestatusField.toggle(false);
+                eventDataField.prop("required", true);
+                companiestatusField.prop("required", false);
+            } else if (selectedIndex === 2) {
+                eventDataField.toggle(false);
+                companiestatusField.toggle(true);
+                eventDataField.prop("required", false);
+                companiestatusField.prop("required", true);
+            }
+
+            filterByField.change(function () {
+                selectedIndex = filterByField.prop('selectedIndex');
+                if (selectedIndex === 0 || selectedIndex === 1) {
+                    eventDataField.toggle(true);
+                    companiestatusField.toggle(false);
+                    eventDataField.prop("required", true);
+                    companiestatusField.prop("required", false);
+                } else if (selectedIndex === 2) {
+                    eventDataField.toggle(false);
+                    companiestatusField.toggle(true);
+                    eventDataField.prop("required", false);
+                    companiestatusField.prop("required", true);
+                }
+            });
+        });
+    </script>
+{% endblock %}

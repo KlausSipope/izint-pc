@@ -4,7 +4,7 @@ header:
         contact: CONTACT
         about: ABOUT
         logout: LOGOUT
-        home: HOME
+        companies: COMPANIES
         profile: PROFILE
 about:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -32,6 +32,16 @@ user.profile:
 errors:
     404: OOPS! - Could not Find it
     500: A team of highly trained monkeys has been dispatched to fix the problem!
+validator:
+    company:
+        name.must.be.shorter: The name must be shorter than 300 characters
+companies:
+    no.companies: There are no available companies!
+    available.companies: No. of Available Companies
+    view.company.details: View Details
+    filter: Filter
+    reset: Reset
+    filter.by: Filter By
 forgot.password: Forgot Password
 security.login.submit: Login
 security.login.password: Password
