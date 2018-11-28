@@ -5,11 +5,7 @@ header:
         about: ABOUT
         logout: LOGOUT
         home: HOME
-        profile:
-            label: PROFILE
-            show: SHOW
-            edit: EDIT
-            update.password: UPDATE PASSWORD
+        profile: PROFILE
 about:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -27,6 +23,12 @@ contact:
     first.name: First Name
     email.label: Email
     message: Message
+user.profile:
+    email: Email
+    name: Name
+    newsletter:
+        subscribed.flash: You have successfully subscribed to the newsletter
+        unsubscribed.flash: You have successfully unsubscribed from the newsletter
 errors:
     404: OOPS! - Could not Find it
     500: A team of highly trained monkeys has been dispatched to fix the problem!
@@ -51,3 +53,5 @@ view.my.profile: View My Profile
 edit.profile: Edit Profile
 update.password: Update Password
 resetting.check.email: Please check your email
+subscribe.to.newsletter: Subscribe to the Newsletter
+unsubscribe.from.newsletter: Unsubscribe from the Newsletter

@@ -1,7 +1,52 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/pages/user/profile.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
 {% block body %}
     <div class="container" style="flex:1;">
-        <h5>Profile page for user {{ user }}</h5>
+        <div id="ProfilePage">
+            <div id="LeftCol">
+                <div id="Photo">
+                    <img id="user-profile-picture" width="300" height="300" src="{{ asset('images/default-user-picture.png') }}" />
+                </div>
+                <div style="text-align: center;">
+                    <br/>
+                    <p id="name-of-the-user"><strong>{{ user.firstName }} {{ user.lastName }}</strong></p>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+
+            <div id="Info">
+                <p><strong>{{ 'user.profile.email'|trans }}: </strong>{{ user.email }}</p>
+                <p><strong>{{ 'user.profile.name'|trans }}: </strong>{{ user.firstName }} {{ user.lastName }}</p>
+                <p><strong>{{ 'description'|trans }}: </strong>{{ user.description }}</p>
+                <br />
+                {% if app.user == user %}
+                    <a id="edit-profile" href="{{ path('user_update') }}">{{ 'edit.profile'|trans }}</a>
+                    <a style="padding: 30px;" href="{{ path('user_update_password') }}">{{ 'update.password'|trans }}</a>
+                    {% if app.user.subscribed == false %}
+                        <a id="newsletter-subscribe" href="{{ path('newsletter_subscribe') }}">{{ 'subscribe.to.newsletter'|trans }}</a>
+                    {% else %}
+                        <a id="newsletter-unsubscribe" href="{{ path('newsletter_unsubscribe') }}">{{ 'unsubscribe.from.newsletter'|trans }}</a>
+                    {% endif %}
+                    <br /><br />
+                {% endif %}
+            </div>
+            <div style="clear:both"></div>
+        </div>
     </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script>
+        {% for label, messages in app.flashes %}
+        {% for message in messages %}
+        alert('{{ message|trans }}');
+        {% endfor %}
+    {% endfor %}
+    </script>
 {% endblock %}
