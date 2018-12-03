@@ -7,10 +7,6 @@
 
 {% block body %}
     <div class="container" style="flex:1;">
-        {% for message in app.flashes('error') %}
-            <div class="flash-error">{{ message }}</div>
-        {% endfor %}
-
         <div class="form-container">
             {{ form_start(form) }}
             {{ form_errors(form) }}
@@ -89,5 +85,12 @@
                 }
             });
         });
+    </script>
+    <script>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                alert('{{ message|trans }}');
+            {% endfor %}
+        {% endfor %}
     </script>
 {% endblock %}
