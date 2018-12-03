@@ -106,16 +106,6 @@ class UserController extends Controller
     }
 
     /**
-     * @return Response
-     *
-     * @Route("/user/home", name="user_homepage")
-     */
-    public function userHomepageAction(): Response
-    {
-        return $this->render('pages/user/homepage.html.twig');
-    }
-
-    /**
      * @Route("/user/newsletter/subscribe", name="newsletter_subscribe")
      *
      * @return RedirectResponse

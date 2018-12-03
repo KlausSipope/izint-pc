@@ -1,0 +1,32 @@
+.form-container .form-group select  {
+    width: 90px;
+    display: inline;
+    margin-left: 20px;
+    height: 30px;
+}
+
+#search_event_status {
+    width: 150px;
+}
+
+.form-container .form-group input {
+    width: 300px;
+    display: inline;
+    margin-left: 20px;
+    height: 28px;
+}
+
+#search-button {
+    width: 90px;
+    height: 35px;
+    display: inline;
+    margin-left: 20px;
+}
+
+.form-container .form-group {
+    display: inline;
+}
+
+.table {
+    margin-top: 30px;
+}

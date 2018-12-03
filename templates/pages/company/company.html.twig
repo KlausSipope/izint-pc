@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/pages/company/company.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="flex:1;">
+        <div id="company-details">
+            <p>{{ 'profile.page.for.company'|trans }} <strong>{{ company.name }}</strong></p>
+            <br />
+            <p><a href="{{ path('all_companies') }}">{{ 'back'|trans }}</a></p>
+        </div>
+    </div>
+{% endblock %}
