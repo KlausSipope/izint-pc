@@ -32,6 +32,8 @@ user.profile:
 errors:
     404: OOPS! - Could not Find it
     500: A team of highly trained monkeys has been dispatched to fix the problem!
+    company:
+        invalid.company: The company that you tried to access is invalid! Please try a different company!
 validator:
     company:
         name.must.be.shorter: The name must be shorter than 300 characters
@@ -65,3 +67,5 @@ update.password: Update Password
 resetting.check.email: Please check your email
 subscribe.to.newsletter: Subscribe to the Newsletter
 unsubscribe.from.newsletter: Unsubscribe from the Newsletter
+back: Back
+profile.page.for.company: Profile page for company

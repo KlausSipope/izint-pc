@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Company;
 use App\Form\Type\SearchCompanyType;
 use App\Repository\CompanyRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -24,27 +25,43 @@ class CompanyController extends Controller
     public function companiesAction(Request $request): Response
     {
         $companyRepository = $this->get(CompanyRepository::class);
-
+        $queryBuilder = $companyRepository->all();
         $form = $this->createForm(SearchCompanyType::class);
+
         $form->handleRequest($request);
-        $allCompaniesQueryBuilder = $companyRepository->createQueryBuilder('e');
         if ($form->isSubmitted() && $form->isValid()) {
-            $formData = array_filter($form->getData());
-            $allCompaniesQueryBuilder
-                ->andWhere($allCompaniesQueryBuilder->expr()->like("e.{$formData['filterBy']}", ':data'))
-                ->setParameter('data', '%' . ($formData['data'] ?? $formData['status']) . '%');
+            $formData = $form->getData();
+            $queryBuilder = $companyRepository->filteredBy($formData['filterBy'], $formData['data']);
         }
 
         return $this->render(
             'pages/company/companies.html.twig',
             [
                 'companies' => $this->get('knp_paginator')->paginate(
-                    $allCompaniesQueryBuilder,
+                    $queryBuilder,
                     $request->query->getInt('page', 1),
                     getenv('COMPANIES_PER_PAGE')
                 ),
                 'form' => $form->createView()
             ]
         );
+    }
+
+    /**
+     * @param Company $company
+     *
+     * @return Response
+     *
+     * @Route("/company/{id}", name="view_company")
+     */
+    public function companyAction(?Company $company): Response
+    {
+        if (null === $company) {
+            $this->addFlash('error', $this->get('translator')->trans('errors.company.invalid.company'));
+
+            return $this->redirectToRoute('all_companies');
+        }
+
+        return $this->render('pages/company/company.html.twig', ['company' => $company]);
     }
 }

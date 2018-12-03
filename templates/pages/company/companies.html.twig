@@ -7,25 +7,29 @@
 
 {% block body %}
     <div class="container" style="flex:1;">
+        {% for message in app.flashes('error') %}
+            <div class="flash-error">{{ message }}</div>
+        {% endfor %}
+
+        <div class="form-container">
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            {{ form_row(form.filterBy) }}
+            {{ form_row(form.data) }}
+            <button id="search-button" class="btn-secondary btn">{{ 'companies.filter'|trans }}</button>
+            <a class="btn-secondary btn" href="{{ path('all_companies') }}">{{ 'companies.reset'|trans }}</a>
+            {{ form_end(form) }}
+        </div>
+        <br />
         {% if companies is not empty %}
             <div class="count onmobile-ignore" style="margin-bottom: 30px;">
                 {{ 'companies.available.companies'|trans }}: {{ companies.getTotalItemCount }}
             </div>
 
-            <div class="form-container">
-                {{ form_start(form) }}
-                {{ form_errors(form) }}
-                {{ form_row(form.filterBy) }}
-                {{ form_row(form.data) }}
-                <button id="search-button" class="btn-secondary btn">{{ 'companies.filter'|trans }}</button>
-                <a class="btn-secondary btn" href="{{ path('all_companies') }}">{{ 'companies.reset'|trans }}</a>
-                {{ form_end(form) }}
-            </div>
-
             <table class="table">
                 <tr>
-                    <th>{{ knp_pagination_sortable(companies, 'Id', 'e.id') }}</th>
-                    <th{% if companies.isSorted('e.name') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(companies, 'name'|trans, 'e.name') }}</th>
+                    <th>{{ knp_pagination_sortable(companies, 'Id', 'c.id') }}</th>
+                    <th{% if companies.isSorted('c.name') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(companies, 'name'|trans, 'c.name') }}</th>
                     <th></th>
                 </tr>
 
@@ -33,7 +37,7 @@
                     <tr {% if loop.index is odd %}class="color"{% endif %}>
                         <td>{{ company.id }}</td>
                         <td>{{ company.name|length > 20 ? company.name|slice(0, 20) ~ '...' : company.name  }}</td>
-                        <td><a href="">{{ 'companies.view.company.details'|trans }}</a></td>
+                        <td><a href="{{ path('view_company', {id: company.id}) }}">{{ 'companies.view.company.details'|trans }}</a></td>
                     </tr>
                 {% endfor %}
             </table>
