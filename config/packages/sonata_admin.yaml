@@ -1,0 +1,21 @@
+sonata_admin:
+    title: IZINT
+    show_mosaic_button: false
+    templates:
+        layout: 'standard_layout.twig'
+    dashboard:
+        groups:
+            Users:
+                label: Users
+                items:
+                    - sonata.user.admin
+
+            Companies:
+                label: Companies
+                items:
+                    - sonata.company.admin
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
