@@ -9,6 +9,7 @@
 
         <nav id="navigation-bar">
             <ul class="nav nav-pills pull-right">
+                {% if is_granted('ROLE_ADMIN') %}<li role="presentation"><a href="{{ path('sonata_admin_dashboard') }}">{{ 'header.nav.admin'|trans }}</a></li>{% endif %}
                 {% if is_granted('ROLE_USER') %}
                     <li role="presentation"><a href="{{ path('all_companies') }}">{{ 'header.nav.companies'|trans }}</a></li>
                     <li role="presentation"><a href="{{ path('fos_user_profile_show', {id: app.user.id}) }}">{{ 'header.nav.profile'|trans }}</a></li>

@@ -1,0 +1,16 @@
+services:
+    _defaults:
+        autowire: false
+        public: true
+
+    sonata.user.admin:
+        class: App\Admin\UserAdmin
+        arguments: [~, App\Entity\User, ~, '@fos_user.user_manager']
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: User }
+
+    sonata.company.admin:
+        class: App\Admin\CompanyAdmin
+        arguments: [~, App\Entity\Company, ~, '@doctrine.orm.entity_manager']
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Company }

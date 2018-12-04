@@ -1,6 +1,7 @@
 imports:
     - { resource: services/repositories.yaml }
     - { resource: services/mailers.yaml }
+    - { resource: services/admins.yaml }
 
 parameters:
     locale: 'en'
