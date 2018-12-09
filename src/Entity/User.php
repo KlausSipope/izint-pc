@@ -185,7 +185,7 @@ class User extends BaseUser
      */
     public function __toString()
     {
-        return $this->getEmail() ?? '';
+        return $this->getEmail();
     }
 
     /**
