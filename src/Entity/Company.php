@@ -74,8 +74,8 @@ class Company
     public function toArray(): array
     {
         return [
-            'id'          => $this->getId(),
-            'firstName'   => $this->getName(),
+            'id'   => $this->getId(),
+            'name' => $this->getName(),
         ];
     }
 }
