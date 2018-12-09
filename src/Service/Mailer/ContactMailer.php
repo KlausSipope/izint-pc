@@ -2,7 +2,7 @@
 
 namespace App\Service\Mailer;
 
-use BookingBundle\Exception\Entity\MissingMandatoryFieldException;
+use App\Exception\MissingMandatoryFieldException;
 
 /**
  * @author Ioan Ovidiu Enache <i.ovidiuenache@yahoo.com>
