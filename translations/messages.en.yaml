@@ -45,6 +45,12 @@ companies:
     filter: Filter
     reset: Reset
     filter.by: Filter By
+newsletter:
+    message: Message
+    send: Send
+    email:
+        sent:
+            successfully: Email has been successfully sent
 forgot.password: Forgot Password
 security.login.submit: Login
 security.login.password: Password

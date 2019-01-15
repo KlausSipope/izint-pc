@@ -6,7 +6,7 @@ use App\Entity\User;
 use App\Form\Type\RegisterUserType;
 use App\Form\Type\UserPasswordType;
 use App\Form\Type\UserProfileType;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +17,7 @@ use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 /**
  * @author Ioan Ovidiu Enache <i.ovidiuenache@yahoo.com>
  */
-class UserController extends Controller
+class UserController extends AbstractController
 {
     /**
      * @param Request $request

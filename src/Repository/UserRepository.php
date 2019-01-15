@@ -9,4 +9,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserRepository extends EntityRepository
 {
+    /**
+     * @return array
+     */
+    public function getSubscribedUsers() : array
+    {
+        return $this->createQueryBuilder('u')
+            ->select('u.email')
+            ->andWhere('u.subscribed = 1')
+            ->getQuery()->getResult();
+    }
 }
