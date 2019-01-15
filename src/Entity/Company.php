@@ -43,7 +43,7 @@ class Company
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -65,7 +65,7 @@ class Company
      */
     public function __toString()
     {
-        return $this->getName();
+        return $this->getName() ?? '';
     }
 
     /**
