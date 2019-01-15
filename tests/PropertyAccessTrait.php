@@ -2,8 +2,6 @@
 
 namespace App\Tests;
 
-use ReflectionClass;
-
 /**
  * @author Ioan Ovidiu Enache <i.ovidiuenache@yahoo.com>
  */
@@ -18,7 +16,7 @@ trait PropertyAccessTrait
      */
     public function setProperty($entity, $value, string $propertyName)
     {
-        $class = new ReflectionClass($entity);
+        $class = new \ReflectionClass($entity);
 
         $property = $class->getProperty($propertyName);
         $property->setAccessible(true);
