@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @author Ioan Ovidiu Enache <i.ovidiuenache@yahoo.com>
  */
-class StaticController extends Controller
+class StaticController extends AbstractController
 {
     /**
      * @Route("/", name="homepage")

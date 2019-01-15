@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Company;
 use App\Form\Type\SearchCompanyType;
 use App\Repository\CompanyRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @author Ioan Ovidiu Enache <i.ovidiuenache@yahoo.com>
  */
-class CompanyController extends Controller
+class CompanyController extends AbstractController
 {
     /**
      * @param Request $request

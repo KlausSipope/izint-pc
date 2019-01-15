@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Form\Type\ContactType;
 use App\Service\Mailer\ContactMailer;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @author Ioan Ovidiu Enache <i.ovidiuenache@yahoo.com>
  */
-class ContactController extends Controller
+class ContactController extends AbstractController
 {
     /**
      * @param Request $request
@@ -20,6 +20,8 @@ class ContactController extends Controller
      * @return Response
      *
      * @Route("/contact", name="contact")
+     *
+     * @throws \App\Exception\MissingMandatoryFieldException
      */
     public function contactAction(Request $request): Response
     {
