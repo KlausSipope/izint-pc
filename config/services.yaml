@@ -12,5 +12,7 @@ services:
         autoconfigure: true
         public: true
 
+    App\Controller\AdminController: ~
+
     fos_user.security.controller:
         class: App\Controller\SecurityController
